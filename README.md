@@ -231,27 +231,79 @@ This matches **CI-style backend flows** used in production teams.
 ## Repository Structure
 
 ```
-risc16-rtl-to-gdsii/
-├── rtl/                 # Verilog RTL
-├── constraints/         # SDC, IO, MCMM
+risc16-rtl-to-gdsii-3nm/
+├── README.md
+├── LICENSE
+│
+├── rtl/
+│   ├── alu.v
+│   ├── regfile.v
+│   ├── control_unit.v
+│   ├── if_stage.v
+│   ├── id_stage.v
+│   ├── ex_stage.v
+│   ├── mem_stage.v
+│   ├── wb_stage.v
+│   ├── pipeline_regs.v
+│   └── risc16_top.v
+│
+├── constraints/
+│   ├── timing.sdc
+│   ├── io_constraints.tcl
+│   ├── mcmm_setup.tcl
+│   └── clocks.tcl
+│
 ├── scripts/
 │   ├── dc/
+│   │   ├── setup.tcl
+│   │   ├── synth.tcl
+│   │   └── reports.tcl
+│   │
 │   ├── icc2/
+│   │   ├── floorplan.tcl
+│   │   ├── power_plan.tcl
+│   │   ├── place.tcl
+│   │   ├── cts.tcl
+│   │   ├── route.tcl
+│   │   └── signoff.tcl
+│   │
 │   ├── pt/
+│   │   ├── mcmm_sta.tcl
+│   │   └── reports.tcl
+│   │
 │   └── calibre/
+│       ├── drc.runset
+│       ├── lvs.runset
+│       └── antenna.runset
+│
 ├── reports/
+│   ├── synthesis/
 │   ├── timing/
+│   │   ├── setup.rpt
+│   │   ├── hold.rpt
+│   │   ├── clock_tree.rpt
+│   │   └── mcmm_summary.rpt
+│   │
 │   ├── power/
+│   │   └── ir_drop.rpt
+│   │
 │   └── area/
+│       └── utilization.rpt
+│
 ├── layout/
 │   ├── def/
 │   ├── lef/
 │   └── gds/
+│
 ├── docs/
-│   ├── microarchitecture.pdf
-│   ├── clock_tree_topology.pdf
-│   └── signoff_summary.pdf
-└── README.md
+│   ├── microarchitecture.md
+│   ├── gpu_style_block.md
+│   ├── clock_tree_topology.md
+│   ├── mcmm_corner_table.md
+│   └── signoff_summary.md
+│
+└── .gitignore
+
 ```
 
 ---
