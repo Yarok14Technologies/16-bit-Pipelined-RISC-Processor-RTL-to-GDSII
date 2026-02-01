@@ -1,0 +1,13 @@
+# =========================================================
+# CALIBRE DRC RUNSET
+# =========================================================
+
+LAYOUT SYSTEM GDSII
+LAYOUT PATH "layout/gds/risc32_top.gds"
+LAYOUT PRIMARY "risc32_top"
+
+DRC RESULTS DATABASE "reports/calibre/drc_results"
+DRC SUMMARY REPORT  "reports/calibre/drc_summary.rpt"
+DRC MAXIMUM RESULTS ALL
+
+INCLUDE "deck/sky130.drc"

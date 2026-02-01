@@ -1,0 +1,7 @@
+icc2_shell
+source icc2/floorplan.tcl
+source icc2/power_plan.tcl
+source icc2/place.tcl
+source icc2/cts.tcl
+source icc2/route.tcl
+source icc2/signoff.tcl

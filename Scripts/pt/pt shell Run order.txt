@@ -1,0 +1,3 @@
+pt_shell
+source pt/mcmm_sta.tcl
+source pt/reports.tcl
